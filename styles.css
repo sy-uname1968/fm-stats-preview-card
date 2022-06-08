@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0 0;
+}
+
+body {
+    font-family: "Inter";
+    font-size: 15px;
+    background-color: hsl(233, 47%, 7%);
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 325px;
+    margin: 140px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+.image-card-mobile {
+    display: block;
+    position: relative;
+    height: 240px;
+}
+
+.image-card-desktop {
+    flex: 0 0 555px;
+    position: relative;
+    display: none;
+}
+
+@media (min-width: 1110px) {
+    .image-card-mobile {
+        display: none;
+    }
+
+    .image-card-desktop {
+        display: block;
+    }
+
+    .container {
+        flex-direction: row;
+        max-width: 1110px;
+    }
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.image-card-desktop::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: hsl(277, 64%, 61%);
+}
+
+.image-card-mobile::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: hsl(277, 64%, 61%);
+}
+
+.text-card {
+    flex: 0 0 555px;
+    background: hsl(244, 38%, 16%);
+    padding: 35px 30px;
+    text-align: center;
+}
+
+.text-card h1 {
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+}
+
+.text-card > h1 > span {
+    color: hsl(277, 64%, 61%);
+}
+
+.text-card > p {
+    margin-bottom: 5px;
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.6;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stats-badge {
+    margin-top: 25px;
+}
+
+.stats-badge > p {
+  text-transform: uppercase;
+  color: hsla(0, 0%, 100%, 0.6);
+  font-family: "Lexend Deca";
+  font-size: 0.75rem;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+
+@media (min-width: 1110px) {
+    .text-card {
+        padding: 70px 110px 70px 70px;
+        text-align: left;
+    } 
+
+    .text-card h1 {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+
+    .stats-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .text-card > p {
+        margin-bottom: 80px;
+        line-height: 1.6;
+    }
+
+    .stats-badge {
+        margin-top: 0;
+    }
+
+    
+}
